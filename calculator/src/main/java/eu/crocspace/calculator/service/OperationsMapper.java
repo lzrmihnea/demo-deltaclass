@@ -5,8 +5,8 @@ import eu.crocspace.calculator.repository.model.OperationEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface OperationsMapper {
-    default OperationDto entityToDto(OperationEntity entity) {
+public class OperationsMapper {
+    public OperationDto entityToDto(OperationEntity entity) {
         return OperationDto.builder()
                 .op1(entity.getOp1())
                 .op2(entity.getOp2())

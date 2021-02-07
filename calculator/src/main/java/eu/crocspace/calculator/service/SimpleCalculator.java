@@ -26,19 +26,19 @@ public class SimpleCalculator {
 
     public BigDecimal add(BigDecimal op1, BigDecimal op2) {
         BigDecimal result = op1.add(op2);
-        saveResult(op1, op2, result);
+        saveResult(op1, op2, result, "+");
         return result;
     }
 
     public BigDecimal subtract(BigDecimal op1, BigDecimal op2) {
         BigDecimal result = op1.subtract(op2);
-        saveResult(op1, op2, result);
+        saveResult(op1, op2, result, "-");
         return result;
     }
 
     public BigDecimal multiply(BigDecimal op1, BigDecimal op2) {
         BigDecimal result = op1.multiply(op2);
-        saveResult(op1, op2, result);
+        saveResult(op1, op2, result, "*");
         return result;
     }
 
@@ -47,7 +47,7 @@ public class SimpleCalculator {
             throw new RuntimeException("First operator cannot be 0");
         }
         BigDecimal result = op1.divide(op2);
-        saveResult(op1, op2, result);
+        saveResult(op1, op2, result, "/");
         return result;
     }
 
@@ -59,12 +59,13 @@ public class SimpleCalculator {
                 .collect(Collectors.toList());
     }
 
-    private void saveResult(BigDecimal op1, BigDecimal op2, BigDecimal result) {
+    private void saveResult(BigDecimal op1, BigDecimal op2, BigDecimal result, String operator) {
         this.repository.save(
                 OperationEntity.builder()
                         .op1(op1)
                         .op2(op2)
                         .result(result)
+                        .operator(operator)
                         .time(Date.from(Instant.now()))
                         .build());
     }

@@ -30,12 +30,12 @@ public class CalculationController {
         return ResponseEntity.ok(service.subtract(BigDecimal.valueOf(op1), BigDecimal.valueOf(op2)));
     }
 
-    @GetMapping("/api/multiply")
+    @PostMapping("/api/multiply")
     public ResponseEntity<BigDecimal> multiply(@RequestParam(name = "op1") Long op1, @RequestParam(name = "op2") Long op2) {
         return ResponseEntity.ok(service.multiply(BigDecimal.valueOf(op1), BigDecimal.valueOf(op2)));
     }
 
-    @GetMapping("/api/divide")
+    @PostMapping("/api/divide")
     public ResponseEntity<BigDecimal> divide(@RequestParam(name = "op1") Long op1, @RequestParam(name = "op2") Long op2) {
         return ResponseEntity.ok(service.divide(BigDecimal.valueOf(op1), BigDecimal.valueOf(op2)));
     }

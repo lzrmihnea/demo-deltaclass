@@ -8,6 +8,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static com.google.common.base.Predicates.or;
+import static springfox.documentation.builders.PathSelectors.any;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
@@ -18,7 +19,8 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("public-api")
                 .select()
-                .paths(postPaths()).build();
+                .paths(any()).build();
+
     }
 
     private Predicate<String> postPaths() {
