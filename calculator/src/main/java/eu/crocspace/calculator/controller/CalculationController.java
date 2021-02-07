@@ -4,6 +4,7 @@ import eu.crocspace.calculator.controller.model.OperationDto;
 import eu.crocspace.calculator.service.SimpleCalculator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,12 +20,12 @@ public class CalculationController {
         this.service = simpleCalculator;
     }
 
-    @GetMapping("/api/add")
+    @PostMapping("/api/add")
     public ResponseEntity<BigDecimal> add(@RequestParam(name = "op1") Long op1, @RequestParam(name = "op2") Long op2) {
         return ResponseEntity.ok(service.add(BigDecimal.valueOf(op1), BigDecimal.valueOf(op2)));
     }
 
-    @GetMapping("/api/subtract")
+    @PostMapping("/api/subtract")
     public ResponseEntity<BigDecimal> subtract(@RequestParam(name = "op1") Long op1, @RequestParam(name = "op2") Long op2) {
         return ResponseEntity.ok(service.subtract(BigDecimal.valueOf(op1), BigDecimal.valueOf(op2)));
     }
