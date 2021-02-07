@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS billionaires;
+
+CREATE TABLE OPERATIONS
+(
+    id       BIGINT AUTO_INCREMENT PRIMARY KEY,
+    op_1     NUMERIC    NOT NULL,
+    op_2     NUMERIC    NOT NULL,
+    operator VARCHAR(2) NOT NULL,
+    time     TIMESTAMP
+);
+
