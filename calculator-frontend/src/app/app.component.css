@@ -1,0 +1,33 @@
+.base {
+  margin-top: 5vh;
+}
+
+.maindisplay {
+  height: 25vh;
+  padding: 5%;
+  font-size: 4rem;
+  text-align: right;
+  overflow: auto;
+}
+
+.subdisplay {
+  border-bottom: 1px solid black;
+}
+
+.keypad {
+  height: calc(200% / 3);
+}
+
+.keys {
+  margin: 0;
+  height: 20%;
+  color: black;
+  padding: 5%;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.keys:hover {
+  opacity: 1;
+}

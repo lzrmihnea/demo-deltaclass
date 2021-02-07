@@ -3,6 +3,7 @@ package eu.crocspace.calculator.controller;
 import eu.crocspace.calculator.controller.model.OperationDto;
 import eu.crocspace.calculator.service.SimpleCalculator;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class CalculationController {
 
     private final SimpleCalculator service;
